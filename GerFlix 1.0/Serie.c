@@ -1,15 +1,8 @@
-
 #include "Serie.h"
 #include <string.h>
 
-/*
-    int idSerie;
-    char nombre[50];
-    char genero[20];
-    int cantidadTemporadas;
-    int estado;
 
-*/
+
 
 void inicializarSeriesEstado(eSerie series[], int cant)
 {
@@ -42,5 +35,17 @@ void inicializarSeriesHardCode(eSerie series[])
 }
 
 
+void mostrarListaSeries(eSerie series[], int t)
+{
+    int i;
+
+    for(i=0; i<t; i++)
+    {
+        if(series[i].estado==1)
+        {
+            printf("%d %s  %s  %d \n", series[i].idSerie, series[i].nombre, series[i].genero, series[i].cantidadTemporadas);
+         }
+    }
+}
 
 

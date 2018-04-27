@@ -32,12 +32,39 @@ void inicializarUsuariosHardCode(eUsuario usuarios[])
 
     }
 
-
-
-
-
-
-
-
-
 }
+
+void mostrarListaUsuarios(eUsuario usuarios[], int t)
+{
+    int i;
+
+    for(i=0; i<t; i++)
+    {
+        if(usuarios[i].estado==1)
+        {
+            printf("%d %s %d \n", usuarios[i].idUsuario, usuarios[i].nombre, usuarios[i].idSerie);
+        }
+    }
+}
+void mostrarUsuarioConSuSerie(eUsuario usuarios[], int t, eSerie series[], int t2)
+{
+
+    int i, j;
+
+
+    for(i=0; i<t; i++)
+    {
+        if(usuarios[i].estado==1)
+        {
+            printf("%d %s %d \n", usuarios[i].idUsuario, usuarios[i].nombre);
+        }
+        for(j=0; j<t2; j++)
+        {
+            if(usuarios[j].estado==1)
+            {
+                printf("%s", series[j].nombre);
+            }
+        }
+    }
+}
+
