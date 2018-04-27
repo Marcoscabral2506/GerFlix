@@ -43,28 +43,55 @@ void mostrarListaUsuarios(eUsuario usuarios[], int t)
         if(usuarios[i].estado==1)
         {
             printf("%d %s %d \n", usuarios[i].idUsuario, usuarios[i].nombre, usuarios[i].idSerie);
+
         }
     }
 }
+
+
 void mostrarUsuarioConSuSerie(eUsuario usuarios[], int t, eSerie series[], int t2)
 {
-
-    int i, j;
-
+    int i;
+    int j;
 
     for(i=0; i<t; i++)
     {
-        if(usuarios[i].estado==1)
-        {
-            printf("%d %s %d \n", usuarios[i].idUsuario, usuarios[i].nombre);
-        }
         for(j=0; j<t2; j++)
         {
-            if(usuarios[j].estado==1)
+            if(usuarios[i].estado==1 && series[j].estado==1)
             {
-                printf("%s", series[j].nombre);
+                if(usuarios[i].idSerie==series[j].idSerie)
+                {
+                        printf("%d %s %s \n", usuarios[i].idUsuario, usuarios[i].nombre, series[j].nombre);
+
+                        break;
+                }
             }
+
         }
     }
 }
+void mostrarSerieConUsuario(eSerie series[], int t, eUsuario usuarios[], int t2)
+{
+    int i;
+    int j;
+
+    for(i=0; i<t; i++)
+    {
+        for(j=0; j<t2; j++)
+        {
+            if(series[i].estado==1 && usuarios[j].estado==1)
+            {
+                if(series[i].idSerie==usuarios[j].idSerie)
+                {
+                  printf("%s %s %d %d %s\n", series[i].nombre, series[i].genero, series[i].idSerie, series[i].cantidadTemporadas,usuarios[j].nombre);
+
+
+                }
+            }
+
+        }
+    }
+}
+
 

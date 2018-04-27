@@ -19,9 +19,15 @@ int main()
 
     printf("\n");
 
-  //  mostrarListaUsuarios(listaDeUsuarios, TAMUSUARIO);
+    mostrarListaUsuarios(listaDeUsuarios, TAMUSUARIO);
+
+    printf("\**********************************\n");
 
     mostrarUsuarioConSuSerie(listaDeUsuarios, TAMUSUARIO, listaDeSeries, TAMSERIE);
+
+    printf("\**********************************\n");
+
+    mostrarSerieConUsuario(listaDeSeries, TAMSERIE, listaDeUsuarios, TAMUSUARIO);
 }
 
 
